@@ -4,7 +4,10 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 const cors = require('cors');
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin:"http://localhost:3000/",
+    methods:["GET","POST"]
+}));
 
 //Middleware to parse JSON with an increased limit (e.g., 20MB)
 app.use(bodyParser.json({limit:'5mb'}));
