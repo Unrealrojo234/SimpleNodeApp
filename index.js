@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 const cors = require('cors');
 const app = express();
 app.use(cors());
+
+//Middleware to parse JSON with an increased limit (e.g., 20MB)
+app.use(bodyParser.json({limit:'5mb'}));
+
 
 //Importing Models
 const Info = require('./models/profile');
