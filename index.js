@@ -5,7 +5,7 @@ require('dotenv').config();
 const cors = require('cors');
 const app = express();
 app.use(cors({
-    origin:"http://localhost:3000/",
+    origin:"https://simple-web-front.vercel.app/info",
     methods:["GET","POST"]
 }));
 
